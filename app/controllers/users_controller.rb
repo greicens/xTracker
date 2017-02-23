@@ -40,6 +40,9 @@ def update
 end
 
 def destroy
+  @user = User.find_by_id(params[:id])
+  @user.destroy
+  redirect_to '/'
 end
 
 private
