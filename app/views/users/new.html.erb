@@ -1,0 +1,26 @@
+<section class="row">
+    <h5 class="center">Welcome to the adventure!</h5>
+    <p class="center red-text">
+      <% flash.each do |name, msg| %>
+      <strong><%= msg %></strong>
+      <% end %>
+    </p>
+    <div class="col m8 offset-m2 col s12">
+        <%= form_for @user  do |f| %>
+        <div class="row">
+            <div class="input-field col s6">
+                <%= f.text_field :email, placeholder: "Email", class:"validate", type:"email", required: true %>
+            </div>
+            <div class="input-field col s6">
+                <%= f.text_field :username, placeholder: "Username", class:"validate", required: true %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <%= f.password_field :password, placeholder: "Password"%>
+            </div>
+        </div>
+        <%= f.submit "Sign Up", class:"btn light-blue darken-3" %>
+        <% end %>
+    </div>
+</section>
