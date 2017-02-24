@@ -10,7 +10,7 @@
     </tr>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= entry.receipt %></td>
+        <td><%= image_tag entry.receipt, class:"receipt_preview materialboxed"%></td>
         <td><%= entry.day %></td>
         <td> category</td>
         <td><%= entry.amount %></td>
