@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  before_action :require_login
+
   def index
     @entries = Entry.all
   end
@@ -8,13 +10,12 @@ class EntriesController < ApplicationController
   def create
     entry = Entry.create(entry_params)
     if entry.save
-      p entry
       redirect_to entry_path(entry)
     else
       entry.errors.full_messages.each do |message|
         flash[:error] = message
       end
-      redirect_to new_entries_path
+      redirect_to new_entry_path
     end
   end
 
