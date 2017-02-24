@@ -3,6 +3,6 @@ class WelcomeController < ApplicationController
     @latest_entries = latest_entries
   end
   def new
-    @entries = Entry.all
+    @entry = Entry.new
   end
 end
