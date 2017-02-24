@@ -22,6 +22,9 @@
             <%= f.text_field :payment_type, placeholder: "Payment Type"%>
         </div>
     </div>
+    <div class="row">
+      <%= f.file_field :receipt %>
+    </div>
     <%= f.submit "Add Item", class:"btn light-blue darken-3" %>
     <% end %>
 </div>
