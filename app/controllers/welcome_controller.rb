@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @entries = Entry.all
+    @latest_entries = latest_entries
   end
   def new
     @entries = Entry.all

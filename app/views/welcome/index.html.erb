@@ -5,7 +5,9 @@
     </div>
     <div class="row">
       <h2>Latest Transactions</h2>
-      <%= latest_entries %>
+      <% @latest_entries.each do |entry| %>
+      <%= entry.amount %>
+      <% end %>
 
     </div>
     <div class="row">
