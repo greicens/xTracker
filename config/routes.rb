@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new', as: 'login'
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  # REPORTS ROUTES
+  get '/reports' => 'reports#index', as: 'reports'
 
 end
