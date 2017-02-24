@@ -1,0 +1,12 @@
+// Place all the styles related to the entries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#entry_income, #entry_expense {
+     position: inherit;;
+    // left: -9999px;
+    opacity: 90;
+}
+
+label::before, label::after{
+  display: none;
+}

@@ -6,9 +6,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="black">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">xTracker</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <% if current_user %>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Log Out", logout_path %></li>
+    <% else %>
+        <li><%=link_to "Log In", login_path %></li>
+        <li><%=link_to "Sign Up", new_user_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
