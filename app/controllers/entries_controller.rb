@@ -6,6 +6,8 @@ class EntriesController < ApplicationController
   end
   def new
     @entry = Entry.new
+    @category = Category.new
+    @categories = Category.all
   end
   def create
     entry = Entry.create(entry_params)
@@ -45,6 +47,6 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:receipt,:amount, :entry_type, :day, :payment_type, :notes, :vendor, :recurring )
+    params.require(:entry).permit(:receipt,:amount, :entry_type, :day, :payment_type, :notes, :vendor, :recurring, :category_id )
   end
 end
