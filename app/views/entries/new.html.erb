@@ -28,7 +28,15 @@
         </div>
     </div>
     <div class="row">
-      <%= f.text_field :category_id, placeholder: "Category"%>
+      <div class="input-field col s12">
+        <%= link_to "add category", '#add-category-modal'%>
+    <select>
+      <option value="" disabled selected>Choose Category</option>
+      <% @categories.each do |category| %>
+      <option value="1"> <%=category.name%> </option>
+      <% end %>
+    </select>
+  </div>
     </div>
     <div class="row">
       <%= f.file_field :receipt %>
@@ -40,4 +48,8 @@
     <%= f.submit "Add Item", class:"btn light-blue darken-3" %>
     <% end %>
 </div>
+<div id="add-category-modal" class="modal">
+    <%= render "categories/new" %>
+</div>
+
 <% console %>
