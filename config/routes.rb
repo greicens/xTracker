@@ -4,11 +4,16 @@ Rails.application.routes.draw do
 
   resources :users
   resources :entries
+  resources :categories
   # SESSION ROUTES
   get '/login' => 'sessions#new', as: 'login'
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-  # REPORTS ROUTES
+  # REPORTS ROUTE
   get '/reports' => 'reports#index', as: 'reports'
+  # DASHBOARD ROUTE
+  get '/dashboard' => 'dashboard#index', as: 'dashboard'
+
+
 
 end
