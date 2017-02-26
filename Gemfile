@@ -33,7 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use CarrierWave to upload pictures
 gem 'carrierwave', '~> 1.0'
-
+# Use chartkick for graphs
+gem "chartkick"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

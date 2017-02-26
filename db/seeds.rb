@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.destroy_all
 Entry.destroy_all
+Category.destroy_all
 User.destroy_all
 
 category_data = [
@@ -49,6 +49,7 @@ User.create(user_data)
 
 day = Date.new(2017,2,23)
 user_id = User.first.id
+category_id = Category.last.id
 entry_data = [
   {
     amount: "12.60",
@@ -58,7 +59,7 @@ entry_data = [
     notes: "snacks",
     vendor: "Walgreens",
     recurring: false,
-    category_id: 4,
+    category_id:category_id ,
     user_id: user_id
   },
   {
@@ -69,7 +70,7 @@ entry_data = [
     notes: "transportation",
     vendor: "Bart",
     recurring: true,
-    category_id: 2,
+    category_id: category_id,
     user_id: user_id
 
   },
@@ -81,7 +82,7 @@ entry_data = [
     notes: "delicious coffee",
     vendor: "Starbucks",
     recurring: false,
-    category_id: 6,
+    category_id: category_id,
     user_id: user_id
   },
   {
@@ -92,7 +93,7 @@ entry_data = [
     notes: "salary",
     vendor: "My Job",
     recurring: true,
-    category_id:5,
+    category_id:category_id,
     user_id: user_id
   }
 ]
