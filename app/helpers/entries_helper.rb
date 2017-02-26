@@ -1,5 +1,6 @@
 module EntriesHelper
   def latest_entries
+    length = Entry
     entries = Entry.order(:created_at).reverse
     result = []
 
@@ -8,4 +9,8 @@ module EntriesHelper
     end
      result
   end
+
+  # def search
+  #   @q = "%#{params[:query]}%"
+  # end
 end

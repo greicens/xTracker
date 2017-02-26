@@ -2,12 +2,11 @@ class EntriesController < ApplicationController
   before_action :require_login
 
   def index
-    @entries = Entry.all
+    @entries = current_user.entries
   end
+
   def new
     @entry = Entry.new
-    @category = Category.new
-    @categories = Category.all
   end
   def create
     entry = Entry.create(entry_params)
@@ -32,9 +31,15 @@ class EntriesController < ApplicationController
   def update
 
     @entry = Entry.find_by_id(params[:id])
+    @entry.update(entry_params)
     if @entry.update(entry_params)
       # Insert flash message errors
       redirect_to entries_path
+    else
+      @entry.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
+      redirect_to edit_entry_path(@entry)
     end
   end
 
