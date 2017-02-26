@@ -4,52 +4,8 @@
   <% flash.each do |name, msg| %>
     <strong><%= msg %></strong>
   <% end %>
-    <%= form_for @entry  do |f| %>
-    <div class="row">
-      <%= f.label :income %>
-      <%= f.radio_button :entry_type, 'Income', id:"entry_income" %>
-      <%= f.label :expense %>
-      <%= f.radio_button :entry_type, 'Expense', id:"entry_expense"%>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <%= f.date_field :day, placeholder: "Day", class:"datepicker" %>
-        </div>
-        <div class="input-field col s6">
-            <%= f.text_field :amount, placeholder: "Amount" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <%= f.text_field :payment_type, placeholder: "Payment Type"%>
-        </div>
-        <div class="input-field col s6">
-          <%= f.text_field :vendor, placeholder: "Vendor"%>
-        </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <%= link_to "add category", '#add-category-modal'%>
-    <select>
-      <option value="" disabled selected>Choose Category</option>
-      <% @categories.each do |category| %>
-      <option value="1"> <%=category.name%> </option>
-      <% end %>
-    </select>
-  </div>
-    </div>
-    <div class="row">
-      <%= f.file_field :receipt %>
-    </div>
-    <div class="row">
-      <%= f.text_field :notes, placeholder: "Notes"%>
+  <%= render "entry_form" %>
+</div>
 
-    </div>
-    <%= f.submit "Add Item", class:"btn light-blue darken-3" %>
-    <% end %>
-</div>
-<div id="add-category-modal" class="modal">
-    <%= render "categories/new" %>
-</div>
 
 <% console %>

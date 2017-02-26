@@ -5,15 +5,16 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= javascript_include_tag 'application' %>
     <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <nav class="black">
+    <nav class="nav-color">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">xTracker</a>
+      <a href="x.png" class="brand-logo"><%= image_tag "x.png", class:"logo" %>xTracker</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <% if current_user %>
@@ -29,8 +30,6 @@
       </ul>
     </div>
   </nav>
-    <div class="container">
       <%= yield %>
-    </div>
   </body>
 </html>
