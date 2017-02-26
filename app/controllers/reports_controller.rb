@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
   def index
-  end 
+    @search = EntriesSearch.new(params[:search])
+    @entries = @search.scope
+  end
 end
