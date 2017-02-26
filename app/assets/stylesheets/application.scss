@@ -19,14 +19,15 @@
 //   border: dashed 1px black;
 // }
 .nav-color{
-  background-color: white;
+  background-color: #609194;
 }
 nav ul a{
-  color: #4E3D42;
+  color: #92DCE0;
   font-size: 40px;
+  text-shadow: 1px 1px black;
 }
 nav ul a:hover{
-  background-color: #757575;
+  background-color: #D79C8C;
 }
 body{
   font-family: 'Sansita', sans-serif;
@@ -42,4 +43,7 @@ body{
 }
 .icons{
   width: 50px;
+}
+nav .brand-logo{
+  padding-bottom: 20px;
 }
