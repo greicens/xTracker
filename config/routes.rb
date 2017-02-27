@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   # REPORTS ROUTE
   get '/reports' => 'reports#index', as: 'reports'
+  get '/reports/:id' => 'reports#show', as: 'report'
+  get '/reports/:id/download' => 'download#show', as: 'report_download'
   # DASHBOARD ROUTE
   get '/dashboard' => 'dashboard#index', as: 'dashboard'
 

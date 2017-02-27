@@ -89,6 +89,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pdfkit (0.8.2)
     pg (0.19.0)
     puma (3.7.1)
     rack (2.0.1)
@@ -131,6 +132,8 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    render_anywhere (0.0.12)
+      rails (>= 3.0.7)
     ruby-graphviz (1.2.2)
     sass (3.4.23)
     sass-rails (5.0.6)
@@ -180,11 +183,13 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   materialize-sass
+  pdfkit
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.1)
   rails-erd
   rails_12factor
+  render_anywhere
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
