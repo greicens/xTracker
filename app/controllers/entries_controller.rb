@@ -2,16 +2,20 @@ class EntriesController < ApplicationController
   before_action :require_login
 
   def index
-    @entries = current_user.entries
+    @user = User.find_by_id(params[:user_id])
+    @entries = @user.entries
   end
 
   def new
     @entry = Entry.new
+    @user = current_user || User.new
   end
   def create
+    user = current_user
     entry = Entry.create(entry_params)
     if entry.save
-      redirect_to entry_path(entry)
+      user.entries << entry
+      redirect_to user_entries_path(user)
     else
       entry.errors.full_messages.each do |message|
         flash[:error] = message
@@ -21,32 +25,35 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find_by_id(params[:id])
+    @user = User.find_by_id(params[:user_id])
+    @entry = @user.entries.find_by_id(params[:id])
   end
 
   def edit
+    @user = User.find_by_id(params[:user_id])
     @entry = Entry.find_by_id(params[:id])
   end
 
   def update
-
+    @user = User.find_by_id(params[:user_id])
     @entry = Entry.find_by_id(params[:id])
     @entry.update(entry_params)
     if @entry.update(entry_params)
       # Insert flash message errors
-      redirect_to entries_path
+      redirect_to user_entries_path(@user)
     else
       @entry.errors.full_messages.each do |message|
         flash[:error] = message
       end
-      redirect_to edit_entry_path(@entry)
+      redirect_to edit_user_entry_path(@user,@entry)
     end
   end
 
   def destroy
-    @entry = Entry.find_by_id(params[:id])
-    @entry.destroy
-    redirect_to entries_path
+    user = User.find_by_id(params[:user_id])
+    entry = Entry.find_by_id(params[:id])
+    entry.destroy
+    redirect_to user_entries_path(@user)
   end
 
   private

@@ -1,5 +1,5 @@
 <!-- FORM FOR ENTRY PARTIAL -->
-<%= form_for @entry  do |f| %>
+<%= form_for [@user, @entry]  do |f| %>
 <div class="row">
   <%= f.label :income %>
   <%= f.radio_button :entry_type, 'Income', id:"entry_income" %>

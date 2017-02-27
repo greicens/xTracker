@@ -1,5 +1,9 @@
 class DashboardController < ApplicationController
+  before_action :require_login
+
   def index
-    @latest_entries = latest_entries
+    @user = current_user
+    @entries = @user.entries
+    p "#{@entries} this is entries"
   end
 end
