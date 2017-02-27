@@ -9,4 +9,5 @@ class Entry < ApplicationRecord
   def self.search(search)
     where("entry_type ILIKE ?", "%#{search}%")
   end
+
 end
