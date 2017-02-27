@@ -53,7 +53,7 @@ class EntriesController < ApplicationController
     user = User.find_by_id(params[:user_id])
     entry = Entry.find_by_id(params[:id])
     entry.destroy
-    redirect_to user_entries_path(@user)
+    redirect_to user_entries_path(user)
   end
 
   private
