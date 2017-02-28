@@ -1,11 +1,6 @@
 <div class="container">
     <h1>Hello</h1>
     <div class="row">
-      <%= button_to "Add Transaction", new_user_entry_path(current_user), :method => :get, class:"btn" %>
-      <%= button_to "Reports", reports_path, :method => :get, class:"btn" %>
-
-    </div>
-    <div class="row">
       <h2>Latest Transactions</h2>
     </div>
     <div class="row">
@@ -30,4 +25,11 @@
             </tr>
           <% end %>
         </table>
+        <div class="row">
+
+        </div>
+        <div class="row left-align">
+          <%= button_to "Add Transaction", new_user_entry_path(current_user), :method => :get, class:"btn btn-large" %>
+        </div>
+
 <% console %>

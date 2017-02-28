@@ -19,15 +19,15 @@
 //   border: dashed 1px black;
 // }
 .nav-color{
-  background-color: #609194;
+  background-color: #1F8DA6;
 }
 nav ul a{
-  color: #92DCE0;
-  font-size: 40px;
+  color: white;
+  font-size: 30px;
   text-shadow: 1px 1px black;
 }
 nav ul a:hover{
-  background-color: #D79C8C;
+  background-color: #D97B29;
 }
 body{
   font-family: 'Sansita', sans-serif;
@@ -46,4 +46,15 @@ body{
 }
 nav .brand-logo{
   padding-bottom: 20px;
+  font-size: 60px;
+}
+.btn, .btn-large{
+  font-size: 20px;
+  background-color: #D97B29
+}
+h2{
+  color: #736F68;
+}
+.btn:hover, .btn-large:hover{
+  background-color: #1F8DA6;
 }
