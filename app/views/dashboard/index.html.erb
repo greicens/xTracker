@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Hello</h1>
+    <div class="row">
+      <%= button_to "Add Transaction", new_user_entry_path(current_user), :method => :get, class:"btn" %>
+      <%= button_to "Reports", reports_path, :method => :get, class:"btn" %>
+
+    </div>
+    <div class="row">
+      <h2>Latest Transactions</h2>
+    </div>
+    <div class="row">
+      <table>
+          <tr>
+            <th>Receipt</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Options</th>
+          </tr>
+          <% latest_entries(@entries).each do |entry| %>
+            <tr>
+              <td><%= image_tag entry.receipt, class:"receipt_preview materialboxed"%></td>
+              <td><%= entry.day %></td>
+              <td><%= entry.category.name %></td>
+              <td><%= number_to_currency(entry.amount) %></td>
+              <td><%= link_to "Edit", edit_user_entry_path(current_user,entry), :method => :get %>
+                  <%= link_to "Delete", user_entry_path(current_user,entry), :method => :delete, data: {confirm: "Are you sure you want to delete this transaction?"} %>
+                  <%= link_to "view", user_entry_path(current_user,entry), :method => :get %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+<% console %>

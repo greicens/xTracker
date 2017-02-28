@@ -13,7 +13,37 @@
  *= require_self
  */
 @import "materialize";
+@import url('https://fonts.googleapis.com/css?family=Raleway|Sansita');
 
+// *{
+//   border: dashed 1px black;
+// }
+.nav-color{
+  background-color: #609194;
+}
+nav ul a{
+  color: #92DCE0;
+  font-size: 40px;
+  text-shadow: 1px 1px black;
+}
 nav ul a:hover{
-  background-color: #757575;
+  background-color: #D79C8C;
+}
+body{
+  font-family: 'Sansita', sans-serif;
+  color: #20887F;
+}
+.logo{
+  width: 80px;
+  font-family: 'Sansita', sans-serif;
+}
+.graph{
+-webkit-mask-image:-webkit-linear-gradient(top, rgba(38, 166, 154, 1), rgba(38, 166, 154, 1));  width: 500px;
+  opacity: 0.5;
+}
+.icons{
+  width: 50px;
+}
+nav .brand-logo{
+  padding-bottom: 20px;
 }

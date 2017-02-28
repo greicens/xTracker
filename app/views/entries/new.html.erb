@@ -1,30 +1,11 @@
 <!-- NEW ENTRY  -->
 <h1>NEW ENTRY</h1>
 <div class="col m8 offset-m2 col s12">
-    <%= form_for @entry  do |f| %>
-    <div class="row">
-      <%= f.label :income %>
-      <%= f.radio_button :entry_type, 'Income', id:"entry_income" %>
-      <%= f.label :expense %>
-      <%= f.radio_button :entry_type, 'Expense', id:"entry_expense"%>
-
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <%= f.date_field :day, placeholder: "Day", class:"datepicker" %>
-        </div>
-        <div class="input-field col s6">
-            <%= f.text_field :amount, placeholder: "Amount" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <%= f.text_field :payment_type, placeholder: "Payment Type"%>
-        </div>
-    </div>
-    <div class="row">
-      <%= f.file_field :receipt %>
-    </div>
-    <%= f.submit "Add Item", class:"btn light-blue darken-3" %>
-    <% end %>
+  <% flash.each do |name, msg| %>
+    <strong><%= msg %></strong>
+  <% end %>
+  <%= render "entry_form" %>
 </div>
+
+
+<% console %>

@@ -1,5 +1,5 @@
 <section class="row">
-    <h5 class="center">Welcome to the adventure!</h5>
+    <h5 class="center">Let's get started!</h5>
     <p class="center red-text">
       <% flash.each do |name, msg| %>
       <strong><%= msg %></strong>
@@ -9,6 +9,7 @@
         <%= form_for @user  do |f| %>
         <div class="row">
             <div class="input-field col s6">
+              <%=f.label :email %>
                 <%= f.text_field :email, placeholder: "Email", class:"validate", type:"email", required: true %>
             </div>
             <div class="input-field col s6">

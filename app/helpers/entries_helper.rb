@@ -1,11 +1,16 @@
 module EntriesHelper
-  def latest_entries
-    entries = Entry.order(:created_at).reverse
+  def latest_entries(entries)
+    length = entries.count
     result = []
-
-    for i in 0..3
+    i = 0
+    while i < length && i < 4 do
       result << entries[i]
+      i+=1
     end
      result
   end
+
+  # def search
+  #   @q = "%#{params[:query]}%"
+  # end
 end
