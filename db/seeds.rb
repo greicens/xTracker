@@ -6,9 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.destroy_all
 Entry.destroy_all
+Category.destroy_all
 User.destroy_all
+
+category_data = [
+  {
+    name: "rent"
+  },
+  {
+    name: "transportation"
+  },
+  {
+    name: "groceries"
+  },
+  {
+    name: "food"
+  },
+  {
+    name: "salary"
+  },
+  {
+    name:"beverages"
+  }
+]
+
+Category.create(category_data)
 
 user_data = [
   {
@@ -22,7 +45,11 @@ user_data = [
     password:"123",
   }
 ]
+User.create(user_data)
+
 day = Date.new(2017,2,23)
+user_id = User.first.id
+category_id = Category.last.id
 entry_data = [
   {
     amount: "12.60",
@@ -31,7 +58,9 @@ entry_data = [
     payment_type: "cash",
     notes: "snacks",
     vendor: "Walgreens",
-    recurring: false
+    recurring: false,
+    category_id:category_id ,
+    user_id: user_id
   },
   {
     amount: "45.00",
@@ -40,7 +69,10 @@ entry_data = [
     payment_type: "debit card",
     notes: "transportation",
     vendor: "Bart",
-    recurring: true
+    recurring: true,
+    category_id: category_id,
+    user_id: user_id
+
   },
   {
     amount: "4.30",
@@ -49,7 +81,9 @@ entry_data = [
     payment_type: "cash",
     notes: "delicious coffee",
     vendor: "Starbucks",
-    recurring: false
+    recurring: false,
+    category_id: category_id,
+    user_id: user_id
   },
   {
     amount: "500",
@@ -58,9 +92,9 @@ entry_data = [
     payment_type: "check",
     notes: "salary",
     vendor: "My Job",
-    recurring: true
+    recurring: true,
+    category_id:category_id,
+    user_id: user_id
   }
 ]
-
-  User.create(user_data)
   Entry.create(entry_data)

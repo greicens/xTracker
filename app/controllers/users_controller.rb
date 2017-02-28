@@ -25,24 +25,25 @@ def create
 end
 
 def edit
-  user_id = params[:id]
-  @user = User.find_by_id(user_id)
-  render :edit
+  @user = User.find_by_id(params[:id])
 end
 
 def update
-  user_id = params[:id]
-  @user = User.find_by_id(user_id)
-  if @user.update_attributes(user_params)
-    # Insert flash message errors
+  @user = User.find_by_id(params[:id])
+  if @user.update(user_params)
     redirect_to user_path(@user)
+  else
+    user.errors.full_messages.each do |message|
+      flash[:error] = message
+    end
+    redirect_to edit_user_path(@user)
   end
 end
 
 def destroy
   @user = User.find_by_id(params[:id])
   @user.destroy
-  redirect_to '/'
+  redirect_to root_path
 end
 
 private
