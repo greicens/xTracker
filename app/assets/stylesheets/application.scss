@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is *= require material_iconsgenerally better to create a new file per style scope.
+ *= require_tree .
+ *= require_self
+ */
+@import "materialize";
+@import url('https://fonts.googleapis.com/css?family=Raleway|Sansita');
+
+// *{
+//   border: dashed 1px black;
+// }
+.nav-color{
+  background-color: #1F8DA6;
+}
+nav ul a{
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px black;
+}
+nav ul a:hover{
+  background-color: #D97B29;
+}
+body{
+  font-family: 'Sansita', sans-serif;
+  color: #20887F;
+}
+.logo{
+  width: 80px;
+  font-family: 'Sansita', sans-serif;
+}
+.graph{
+-webkit-mask-image:-webkit-linear-gradient(top, rgba(38, 166, 154, 1), rgba(38, 166, 154, 1));  width: 500px;
+  opacity: 0.5;
+}
+.icons{
+  width: 50px;
+}
+nav .brand-logo{
+  padding-bottom: 20px;
+  font-size: 60px;
+}
+.btn, .btn-large{
+  font-size: 20px;
+  background-color: #D97B29
+}
+h2{
+  color: #736F68;
+}
+.btn:hover, .btn-large:hover{
+  background-color: #1F8DA6;
+}

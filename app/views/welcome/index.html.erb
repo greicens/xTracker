@@ -1,0 +1,77 @@
+<div class="center-align">
+  <div class="intro-container">
+    <div class="sign-up-box">
+      <h1>Understand where your money is going</h1>
+    </div>
+
+  </div>
+  <!-- <div class="row"> -->
+    <div class="row">
+        <div class="col s12 m6">
+                <div class="row">
+                  <div class="col s1">
+                  </div>
+                  <div class="col s2">
+                    <p><%= image_tag "calendar.png", class:"icons" %>
+                  </div>
+                  <div class="col s6">
+                    <p class="text-big">Recurring Transactions</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s1">
+                  </div>
+                  <div class="col s2">
+                    <p><%= image_tag "pdf.png", class:"pdf" %>
+                  </div>
+                  <div class="col s6">
+                    <p class="text-big">.pdf Reports</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s1">
+                  </div>
+                  <div class="col s2">
+                    <p><%= image_tag "remider.png", class:"icons" %>
+                  </div>
+                  <div class="col s6">
+                    <p class="text-big">Remiders</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col m6 s12">
+                <div class="row">
+
+                </div>
+
+                <div class="col s3">
+
+                </div>
+                <div class="col s6 pitch">
+                  <h2>Signup Now</h2>
+
+                </div>
+                <div class="col s3">
+
+                </div>
+
+              </div>
+
+            </div>
+      <!-- </div> -->
+    <div class="col s1">
+
+    </div>
+    <div class="col s5">
+
+    </div>
+    <div class="col s5">
+
+    </div>
+    <div class="col s1">
+
+    </div>
+
+  </div>
+</div>
+<%= bar_chart Entry.group(:entry_type).count %>

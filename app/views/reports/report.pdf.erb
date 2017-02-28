@@ -1,0 +1,23 @@
+<div class="report">
+  <h2> xTracker Report </h2>
+  <table>
+      <tr>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Category</th>
+        <th>Amount</th>
+      </tr>
+
+      <% @entries.each do |entry| %>
+        <% if current_user.entries.include?(entry) %>
+        <tr>
+          <td><%= entry.day %></td>
+          <td><%= entry.entry_type %></td>
+          <td><%= entry.category.name %></td>
+          <td><%= number_to_currency(entry.amount) %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+
+</div>

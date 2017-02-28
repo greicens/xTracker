@@ -1,0 +1,11 @@
+<section class="container">
+  <%= form_for @category do |f| %>
+  <div class="input-field col s12">
+    <%= f.text_field :name, placeholder: "Category Name" %>
+  </div>
+  <div class="row">
+    <%= f.submit "Submit", class:"btn light-blue darken-3" %>
+  </div>
+
+  <% end %>
+</section>

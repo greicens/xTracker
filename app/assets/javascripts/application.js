@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require materialize-sprockets
+//= require materialize
+//= require Chart.bundle
+//= require highcharts
+//= require chartkick
 //= require_tree .
