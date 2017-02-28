@@ -3,7 +3,15 @@ class EntriesController < ApplicationController
 
   def index
     @user = User.find_by_id(params[:user_id])
-    @entries = @user.entries
+    # @entries = @user.entries
+    category = Category.find_by_name(params[:category])
+    @entries = @user.entries.where(nil) #creates an anonymous scope
+    @entries = @entries.category(category.id) if params[:category].present?
+    @entries = @entries.vendor(params[:vendor]) if params[:vendor].present?
+    @entries = @entries.entry_type(params[:entry_type]) if params[:entry_type].present?
+    @entries = @entries.payment_type(params[:payment_type]) if params[:payment_type]?
+
+
   end
 
   def new
