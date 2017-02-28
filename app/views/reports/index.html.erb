@@ -7,19 +7,6 @@
     <div class="col s6">
       <h2>Search By Date</h2>
       <div class="range-query">
-        <%= form_tag reports_path, method: :get do %>
-          <div class="col s6 input-field">
-            <%= label_tag "from" %>
-            <%= text_field_tag 'search[date_from]', @search.date_from, type: "search" %>
-          </div>
-          <div class="col s6 input-field">
-            <%= label_tag "to" %>
-            <%= text_field_tag 'search[date_to]', @search.date_to, type: "search" %>
-          </div>
-          <%= submit_tag 'Search', class: 'btn' %>
-        <% end %>
-      </div>
-      <div class="row">
         <h2> Amount by Category</h2>
       </div>
   </div>
@@ -63,5 +50,7 @@
     <div class="col s4">
       <%= pie_chart @entries.group(:category_id).sum(:amount) %>
     </div>
+    <%= link_to "download pdf", reports_path(:format => :pdf) %>
+
   </div>
 <% console %>
