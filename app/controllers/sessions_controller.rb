@@ -4,18 +4,26 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user_params = params.require(:user).permit(:email, :password)
-    @user = User.confirm(user_params)
-    if @user
-      login(@user)
-      flash[:notice] = "Successfully logged in."
-      redirect_to @user
-    else
-
-      flash[:login_error] = "Incorrect email or password"
-      redirect_to login_path
-    end
+    auth_hash = request.env['omniauth.auth']
+    render :text => auth_hash.inspect
+    # begin
+    #   @user = User.from_omniauth(request.env['omniauth.auth'])
+    #   session[:user_id] = @user.id
+    #   flash[:success] = "Welcome, #{@user.name}!"
+    # rescue
+    #   flash[:warning] = "There was an error while trying to authenticate you..."
+    # end
+    # redirect_to root_path
   end
+    # begin
+    #   @user = User.from_omniauth(request.env['omniauth.auth'])
+    #   session[:user_id] = @user.id
+    #   flash[:success] = "Welcome, #{@user.name}!"
+    # rescue
+    #   flash[:warning] = "There was an error while trying to authenticate you..."
+    # end
+    # redirect_to root_path
+# end
 
   def destroy
     session[:user_id] = nil

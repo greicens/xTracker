@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'omniauth'
 # Use omniauth-facebook to authenticate user
 gem 'omniauth-facebook'
 # Use wicked_pdf to generate pdf files
