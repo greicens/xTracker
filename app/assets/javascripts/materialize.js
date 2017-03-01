@@ -7,4 +7,5 @@ $(document).ready(function(){
   });
   $('.materialboxed').materialbox();
   $('select').material_select();
+  $('.parallax').parallax();
 })
