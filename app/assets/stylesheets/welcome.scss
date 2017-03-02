@@ -1,13 +1,16 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .sign-up-box {
     padding: 15px;
     background: rgba(0,0,0,0.5);
     border-radius: 4px;
 }
 .intro-container{
-  background-image: url("money.png");
+  // background-image: url("fabian-blank-78637.jpg");
+  width: 100%;
 }
 .pdf{
   width: 70px;
@@ -22,8 +25,20 @@ h1{
 .pitch{
   border: solid 1px black;
   border-radius: 20px;
-  height: 500px;
+  max-width: 450px;
+  background-color: rgba(255,255,255,.8);
 }
 // .card{
 //   width: 500px;
 // }
+// .parallax-container {
+//   background-color: rgba(0,0,0,.5)
+// }
+.btn, .btn-large{
+  font-size: 20px;
+  background-color: #D97B29
+}
+.box{
+  background-color: rgba(0,0,0,.6);
+  border-radius: 20px;
+}

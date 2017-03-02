@@ -1,5 +1,7 @@
+<div class="container">
+
 <div class="row" id="login-container">
-  <div class="form-group col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+  <div class="row">
       <h2 class="subtitle">LOGIN</h2>
         <%= form_for @user, :url => sessions_path(@user) do |f| %>
 
@@ -12,4 +14,10 @@
           <%= f.submit "Log In", class:'btn btn-danger btn-block' %>
         <% end %>
       </div>
+      <div class="row">
+        <%= link_to "/auth/facebook", class: "" do %>
+                <%= image_tag 'login-facebook.png', class:"hoverable" %>
+              <% end %>
+      </div>
   </div>
+</div>
