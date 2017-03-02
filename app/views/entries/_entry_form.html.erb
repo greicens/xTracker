@@ -1,39 +1,51 @@
 <!-- FORM FOR ENTRY PARTIAL -->
-<%= form_for [@user, @entry]  do |f| %>
-<div class="row">
-  <%= f.label :income %>
-  <%= f.radio_button :entry_type, 'Income', id:"entry_income" %>
-  <%= f.label :expense %>
-  <%= f.radio_button :entry_type, 'Expense', id:"entry_expense"%>
-</div>
-<div class="row">
-    <div class="input-field col s6">
-        <%= f.date_field :day, placeholder: "Day", class:"datepicker" %>
-    </div>
-    <div class="input-field col s6">
-        <%= f.text_field :amount, placeholder: "Amount" %>
-    </div>
-</div>
-<div class="row">
-    <div class="input-field col s6">
-        <%= f.text_field :payment_type, placeholder: "Payment Type"%>
-    </div>
-    <div class="input-field col s6">
-      <%= f.text_field :vendor, placeholder: "Vendor"%>
-    </div>
-</div>
-<div class="row">
-  <div class="input-field col s12">
-    <%= link_to "add category", new_category_path %>
-    <%= f.collection_select :category_id, Category.all,:id, :name %>
-</div>
-</div>
-<div class="row">
-  <%= f.file_field :receipt %>
-</div>
-<div class="row">
-  <%= f.text_field :notes, placeholder: "Notes"%>
+<div class="container">
 
+  <%= form_for [@user, @entry]  do |f| %>
+    <div class="row type">
+      <div class="col s12 m12">
+        <%= f.label :income %>
+        <%= f.radio_button :entry_type, 'Income', id:"entry_income" %>
+        <%= f.label :expense %>
+        <%= f.radio_button :entry_type, 'Expense', id:"entry_expense"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <%=f.label :date %>
+        <%= f.date_field :day, class:"datepicker" %>
+      </div>
+      <div class="col s6">
+        <%= f.label :category %>
+        <%= f.collection_select :category_id, Category.all,:id, :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <%= f.label :payment_type %>
+        <%= f.text_field :payment_type, placeholder: "e.g.: cash, card, check"%>
+      </div>
+      <div class="col s6">
+        <%= f.label :vendor %>
+        <%= f.text_field :vendor, placeholder: "Vendor"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6 m6">
+        <%= f.label :amount %>
+        <%= f.text_field :amount, placeholder: "e.g: 35.50" %>
+      </div>
+      <div class="col s6 m6">
+        <%= f.label :notes%>
+        <%= f.text_field :notes, placeholder: "Description of Transaction"%>
+      </div>
+    </div>
+    <div class="row">
+      <p><%= f.label :Upload_Receipt %></p>
+      <%= f.file_field :receipt %>
+    </div>
+    <div class="row center-align">
+      <%= f.submit "Submit", class:"btn" %>
+    </div>
+  <% end %>
 </div>
-<%= f.submit "Add Item", class:"btn light-blue darken-3" %>
-<% end %>
