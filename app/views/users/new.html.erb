@@ -33,4 +33,11 @@
         <%= f.submit "Sign Up", class:"btn" %>
         <% end %>
     </div>
+    <h2>OR</h2>
+    <div class="row">
+      <%= link_to "/auth/facebook", class: "" do %>
+        <%= image_tag 'login-facebook.png', class:"hoverable", id:"facebook-btn" %>
+      <% end %>
+    </div>
+
 </div>

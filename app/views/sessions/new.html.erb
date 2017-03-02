@@ -14,10 +14,11 @@
           <%= f.submit "Log In", class:'btn btn-danger btn-block' %>
         <% end %>
       </div>
+      <h2>OR</h2>
       <div class="row">
         <%= link_to "/auth/facebook", class: "" do %>
-                <%= image_tag 'login-facebook.png', class:"hoverable" %>
-              <% end %>
+          <%= image_tag 'login-facebook.png', class:"hoverable", id:"facebook-btn" %>
+        <% end %>
       </div>
   </div>
 </div>
