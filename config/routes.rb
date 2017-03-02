@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :categories
   # SESSION ROUTES
   get '/login' => 'sessions#new', as: 'login'
-  get '/auth/:provider/callback' => 'sessions#create'
+  get '/auth/:provider/callback' => 'sessions#create_with_facebook'
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   # REPORTS ROUTE

@@ -15,7 +15,9 @@
         <% end %>
       </div>
       <div class="row">
-        <li><%= link_to 'Facebook', '/auth/facebook' %></li>
+        <%= link_to "/auth/facebook", class: "" do %>
+                <%= image_tag 'login-facebook.png', class:"hoverable" %>
+              <% end %>
       </div>
   </div>
 </div>
