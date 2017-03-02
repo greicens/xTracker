@@ -1,6 +1,39 @@
-<h2>Welcome, <%= @user.username %></h2>
-<% if current_user == @user %>
-<%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class:"btn btn-danger center-block" %>
-<%= link_to "Delete Profile", @user, class: "btn red", method: :delete, data: {confirm: "Are you sure you want to delete your profile?"} %>
-
-<% end %>
+<!-- USER PROFILE PAGE  -->
+<div class="container">
+  <div class="row">
+    <h2>Welcome, <%= @user.username %></h2>
+    <hr>
+  </div>
+  <div class="row">
+    <% if current_user == @user %>
+      <div class="col s2 m2">
+        <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class:"btn btn-danger center-block" %>
+      </div>
+      <div class="col s2 m2">
+        <%= button_to "Delete Profile", @user, class: "btn red", method: :delete, data: {confirm: "Are you sure you want to delete your profile?"} %>
+      </div>
+  </div>
+  <div class="row">
+    <h3>Get your expenses organized!</h3>
+  </div>
+    <div class="row">
+      <div class="col s4 m4">
+        <%= button_to "View Categories", categories_path, method: :get, class:"btn" %>
+      </div>
+      <div class="col s4 m4">
+        <%= button_to "Add Transaction", new_user_entry_path(@user), method: :get, class:"btn" %>
+      </div>
+      <div class="col s4 m4">
+        <%= button_to "View Transactions", user_entries_path(@user), method: :get, class:"btn" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s4 m4">
+        <%= button_to "Dashboard", dashboard_path, method: :get, class:"btn" %>
+      </div>
+      <div class="col s4 m4">
+        <%= button_to "Generate Report", reports_path, method: :get, class:"btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>

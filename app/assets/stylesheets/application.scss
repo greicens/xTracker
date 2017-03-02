@@ -68,3 +68,14 @@ td{
 #total{
   padding-right: 300px;
 }
+.type{
+  font-size: 20px;
+}
+label{
+  font-size: 25px;
+  color: #20887F;
+}
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+  font-size: 25px;
+
+}
