@@ -11,7 +11,7 @@ Feel free to fork / star / watch for your own personal use.
 
 
 ## Entity-Relationship Diagram
-
+![alt text](app/assets/images/xtrackerErd.png)
 
 ## Technologies Used   
 
