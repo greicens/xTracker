@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   def index
+    @user = current_user
     category = Category.find_by_name(params[:category])
     @entries = current_user.entries.where(nil) #creates an anonymous scope
     @entries = @entries.category(category.id) if params[:category].present?

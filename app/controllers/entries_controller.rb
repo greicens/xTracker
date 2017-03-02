@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
     @user = current_user
     @entry = Entry.create(entry_params)
     if @entry.save
-      @user.entries << entry
+      @user.entries << @entry
       redirect_to user_entries_path(@user)
     else
       @entry.errors.full_messages.each do |message|

@@ -13,7 +13,7 @@
             <th>Amount</th>
             <th>Options</th>
           </tr>
-          <% latest_entries(@entries).each do |entry| %>
+          <% latest_entries(@user.entries).each do |entry| %>
             <tr>
               <td><%= image_tag entry.receipt, class:"receipt_preview materialboxed"%></td>
               <td><%= entry.day %></td>
@@ -39,3 +39,4 @@
             <%= button_to "View Categories", categories_path, :method => :get, class:"btn btn-large" %>
           </div>
         </div>
+<% console %>
