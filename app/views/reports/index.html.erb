@@ -11,11 +11,11 @@
           <div class="row">
             <div class="col s4">
               <%= label_tag "From",nil, class:"search-field" %>
-              <%= text_field_tag :date_from, params[:date_from] %>
+              <%= text_field_tag :date_from, params[:date_from] , class:"datepicker"%>
             </div>
             <div class="col s4">
               <%= label_tag "To",nil, class:"search-field" %>
-              <%= text_field_tag :date_to, params[:date_to] %>
+              <%= text_field_tag :date_to, params[:date_to],class:"datepicker" %>
             </div>
           </div>
         </div>
@@ -24,20 +24,16 @@
           <h4>Filter By:</h4>
           <div class="row">
             <div class="col s3">
-              <%= label_tag "Transaction Type",nil, class:"search-field" %>
-              <%= text_field_tag :entry_type, params[:entry_type] %>
-            </div>
-            <div class="col s3">
               <%= label_tag "Category",nil, class:"search-field" %>
-              <%= text_field_tag :category, params[:category] %>
+              <%= text_field_tag :category, params[:category], placeholder:"e.g.: maintenance, rent" %>
             </div>
             <div class="col s3">
               <%= label_tag "Payment Type",nil, class:"search-field" %>
-              <%= text_field_tag :payment_type, params[:payment_type] %>
+              <%= text_field_tag :payment_type, params[:payment_type], placeholder: "e.g: cash, credit card, check" %>
             </div>
             <div class="col s3">
               <%= label_tag "Vendor",nil, class:"search-field" %>
-              <%= text_field_tag :vendor, params[:vendor] %>
+              <%= text_field_tag :vendor, params[:vendor], placeholder:"where did you buy this item?" %>
             </div>
           </div>
         </div>
@@ -54,7 +50,6 @@
         <tr>
           <th>Receipt</th>
           <th>Date</th>
-          <th>Type</th>
           <th>Category</th>
           <th>ID</th>
           <th>Payment</th>
@@ -66,7 +61,6 @@
           <tr class="hoverable">
             <td><%= image_tag entry.receipt, class:"receipt_preview materialboxed"%></td>
             <td><%= entry.day %></td>
-            <td><%= entry.entry_type %></td>
             <td><%= entry.category.name %></td>
             <td><%= entry.category.id %></td>
             <td><%= entry.payment_type %></td>

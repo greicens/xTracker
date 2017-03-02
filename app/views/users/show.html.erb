@@ -18,18 +18,18 @@
   </div>
     <div class="row">
       <div class="col s4 m4">
-        <%= button_to "View Categories", categories_path, method: :get, class:"btn" %>
-      </div>
-      <div class="col s4 m4">
         <%= button_to "Add Transaction", new_user_entry_path(@user), method: :get, class:"btn" %>
       </div>
       <div class="col s4 m4">
         <%= button_to "View Transactions", user_entries_path(@user), method: :get, class:"btn" %>
       </div>
+      <div class="col s4 m4">
+        <%= button_to "Dashboard", dashboard_path, method: :get, class:"btn" %>
+      </div>
     </div>
     <div class="row">
       <div class="col s4 m4">
-        <%= button_to "Dashboard", dashboard_path, method: :get, class:"btn" %>
+        <%= button_to "View Categories", categories_path, method: :get, class:"btn" %>
       </div>
       <div class="col s4 m4">
         <%= button_to "Generate Report", reports_path, method: :get, class:"btn" %>

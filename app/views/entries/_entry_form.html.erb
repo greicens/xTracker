@@ -1,14 +1,6 @@
 <!-- FORM FOR ENTRY PARTIAL -->
-<div class="container">
 
   <%= form_for [@user, @entry]  do |f| %>
-    <div class="row type">
-      <div class="col s12 m12">
-        <%= f.label :income %>
-        <%= f.radio_button :entry_type, 'Income', id:"entry_income" %>
-        <%= f.label :expense %>
-        <%= f.radio_button :entry_type, 'Expense', id:"entry_expense"%>
-      </div>
     </div>
     <div class="row">
       <div class="col s6">
@@ -16,8 +8,7 @@
         <%= f.date_field :day, class:"datepicker" %>
       </div>
       <div class="col s6">
-        <%= f.label :category %>
-        <%= f.collection_select :category_id, Category.all,:id, :name %>
+        <%= f.collection_select :category_id, Category.order(:name),:id, :name, include_blank:true %>
       </div>
     </div>
     <div class="row">
@@ -27,13 +18,13 @@
       </div>
       <div class="col s6">
         <%= f.label :vendor %>
-        <%= f.text_field :vendor, placeholder: "Vendor"%>
+        <%= f.text_field :vendor, placeholder: "Vendor", placeholder: "where did you buy this item?"%>
       </div>
     </div>
     <div class="row">
       <div class="col s6 m6">
         <%= f.label :amount %>
-        <%= f.text_field :amount, placeholder: "e.g: 35.50" %>
+        <%= f.text_field :amount, placeholder: "e.g: 35.50 (no comas)" %>
       </div>
       <div class="col s6 m6">
         <%= f.label :notes%>
@@ -48,4 +39,3 @@
       <%= f.submit "Submit", class:"btn" %>
     </div>
   <% end %>
-</div>

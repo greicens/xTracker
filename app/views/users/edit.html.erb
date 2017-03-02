@@ -1,13 +1,21 @@
-<%= form_for @user do |f| %>
-<div class="row">
-  <div class="col-md-6">
-    <%= f.label :username, class:"input_field_label", required:"true" %>:
-    <%= f.text_field :username, placeholder: "Username" %>
+<div class="container">
+  <div class="row">
+    <h2>EDIT PROFILE</h2>
+    <hr>
   </div>
-  <div class="col-md-6">
-    <%= f.label :email, class:"input_field_label" %>:
-    <%= f.email_field :email, placeholder: "Email" %>
+  <div class="row">
+    <%= form_for @user do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :username, required:"true" %>:
+        <%= f.text_field :username, placeholder: "Username" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.label :email %>:
+        <%= f.email_field :email, placeholder: "Email" %>
+      </div>
+    </div>
+    <%= f.submit "Save", class:"btn btn-danger" %>
+    <% end %>
   </div>
 </div>
-<%= f.submit "Save", class:"btn btn-danger" %>
-<% end %>

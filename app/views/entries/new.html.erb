@@ -1,8 +1,8 @@
 <!-- NEW ENTRY  -->
-<h1>NEW ENTRY</h1>
-<div class="col m8 offset-m2 col s12">
-  <% flash.each do |name, msg| %>
-    <strong><%= msg %></strong>
-  <% end %>
-  <%= render "entry_form" %>
+<div class="container">
+  <h2>Add Transaction</h2>
+  <div class="col m8 offset-m2 col s12">
+    <%= render "entry_form" %>
+  </div>
+
 </div>
