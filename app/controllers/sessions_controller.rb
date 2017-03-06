@@ -20,8 +20,8 @@ class SessionsController < ApplicationController
   def create_with_facebook
     auth_hash = request.env['omniauth.auth']
     @authorization = Authorization.find_by_uid(auth_hash.uid)
+    
    if @authorization
-     puts "inside if"
      @user = User.find_by_id(@authorization.user_id)
      login(@user)
      flash[:notice] = "Successfully logged in."

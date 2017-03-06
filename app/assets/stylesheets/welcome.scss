@@ -19,21 +19,17 @@ h1{
   color: white;
 }
 .text-big{
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .pitch{
   border: solid 1px black;
   border-radius: 20px;
   max-width: 450px;
+  height: 300px;
   background-color: rgba(255,255,255,.8);
 }
-// .card{
-//   width: 500px;
-// }
-// .parallax-container {
-//   background-color: rgba(0,0,0,.5)
-// }
+
 .btn, .btn-large{
   font-size: 20px;
   background-color: #D97B29
@@ -41,4 +37,12 @@ h1{
 .box{
   background-color: rgba(0,0,0,.6);
   border-radius: 20px;
+}
+#track{
+  font-size: 18px;
+  color: #736F68;
+  padding-left: 100px;
+}
+.action{
+  padding-top: 100px
 }

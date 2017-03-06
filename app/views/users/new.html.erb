@@ -1,5 +1,7 @@
-<section class="row">
-    <h5 class="center">Let's get started!</h5>
+<!-- SIGNUP FORM  -->
+<div class="container">
+    <h2 class="left-align">Let's get started!</h2>
+    <hr>
     <p class="center red-text">
       <% flash.each do |name, msg| %>
       <strong><%= msg %></strong>
@@ -8,20 +10,34 @@
     <div class="col m8 offset-m2 col s12">
         <%= form_for @user  do |f| %>
         <div class="row">
-            <div class="input-field col s6">
+            <div class="col s6">
               <%=f.label :email %>
-                <%= f.text_field :email, placeholder: "Email", class:"validate", type:"email", required: true %>
+              <%= f.text_field :email, placeholder: "e.g:yourname@example.com", class:"validate", type:"email", required: true %>
             </div>
-            <div class="input-field col s6">
-                <%= f.text_field :username, placeholder: "Username", class:"validate", required: true %>
+            <div class="col s6">
+              <%= f.label :username %>
+              <%= f.text_field :username , class:"validate", required: true %>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
-                <%= f.password_field :password, placeholder: "Password"%>
+            <div class="col s6">
+              <%= f.label :password %>
+              <%= f.password_field :password, placeholder: "Password", class:"validate", required: true%>
             </div>
+            <div class="col s6">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class:"validate", required: true%>
+            </div>
+
         </div>
-        <%= f.submit "Sign Up", class:"btn light-blue darken-3" %>
+        <%= f.submit "Sign Up", class:"btn" %>
         <% end %>
     </div>
-</section>
+    <h2>OR</h2>
+    <div class="row">
+      <%= link_to "/auth/facebook", class: "" do %>
+        <%= image_tag 'login-facebook.png', class:"hoverable", id:"facebook-btn" %>
+      <% end %>
+    </div>
+
+</div>

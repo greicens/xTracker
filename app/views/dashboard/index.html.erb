@@ -1,7 +1,8 @@
 <div class="container">
-    <h1>Hello</h1>
+    <h2>Dashboard</h2>
+    <hr>
     <div class="row">
-      <h2>Latest Transactions</h2>
+      <h4>Latest Transactions</h4>
     </div>
     <div class="row">
       <table>
@@ -12,15 +13,16 @@
             <th>Amount</th>
             <th>Options</th>
           </tr>
-          <% latest_entries(@entries).each do |entry| %>
+          <% latest_entries(@user.entries).each do |entry| %>
             <tr>
               <td><%= image_tag entry.receipt, class:"receipt_preview materialboxed"%></td>
               <td><%= entry.day %></td>
               <td><%= entry.category.name %></td>
               <td><%= number_to_currency(entry.amount) %></td>
-              <td><%= link_to "Edit", edit_user_entry_path(current_user,entry), :method => :get %>
-                  <%= link_to "Delete", user_entry_path(current_user,entry), :method => :delete, data: {confirm: "Are you sure you want to delete this transaction?"} %>
-                  <%= link_to "view", user_entry_path(current_user,entry), :method => :get %>
+              <td>
+                &nbsp;<i class="material-icons">open_with</i><%= link_to "view", user_entry_path(current_user,entry), :method => :get %>
+                &nbsp;<i class="material-icons">mode_edit</i><%= link_to "Edit", edit_user_entry_path(current_user,entry), :method => :get %>
+                &nbsp;<i class="material-icons">delete</i><%= link_to "Delete", user_entry_path(current_user,entry), :method => :delete, data: {confirm: "Are you sure you want to delete this transaction?"} %>
               </td>
             </tr>
           <% end %>
@@ -29,7 +31,12 @@
 
         </div>
         <div class="row left-align">
-          <%= button_to "Add Transaction", new_user_entry_path(current_user), :method => :get, class:"btn btn-large" %>
+          <div class="col s2"></div>
+          <div class="col s12 m4">
+            <%= button_to "Add Transaction", new_user_entry_path(current_user), :method => :get, class:"btn btn-large" %>
+          </div>
+          <div class="col s12 m4">
+            <%= button_to "View Categories", categories_path, :method => :get, class:"btn btn-large" %>
+          </div>
         </div>
-
 <% console %>

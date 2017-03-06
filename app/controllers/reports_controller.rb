@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   def index
+    @user = current_user
     category = Category.find_by_name(params[:category])
     @entries = current_user.entries.where(nil) #creates an anonymous scope
     @entries = @entries.category(category.id) if params[:category].present?
@@ -10,8 +11,8 @@ class ReportsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "report_pdf.html.erb",   # Excluding ".pdf" extension.
-        template: "reports/report"
+        render pdf: "reports/report.erb",   # Excluding ".pdf" extension.
+        template: "reports/index.html.erb"
       end
     end
   end

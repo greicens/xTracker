@@ -59,3 +59,36 @@ h2{
 .btn:hover, .btn-large:hover{
   background-color: #1F8DA6;
 }
+th{
+  font-size: 25px;
+}
+td{
+  font-size: 20px;
+}
+#total{
+  padding-right: 300px;
+}
+.type{
+  font-size: 20px;
+}
+label{
+  font-size: 25px;
+  color: #20887F;
+}
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+  font-size: 25px;
+
+}
+.logo-name{
+  font-size: 60px;
+  margin-left: 90px;
+}
+#facebook-btn{
+  width: 200px;
+}
+#receipt{
+  height: 200px;
+}
+.receipt-details{
+  font-size: 25px;
+}

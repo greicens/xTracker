@@ -19,5 +19,7 @@
         <% end %>
       <% end %>
     </table>
-
+    <div class="row right-align", id="total">
+      <h4>Total <%= number_to_currency(@entries.sum(:amount)) %></h4>
+    </div>
 </div>

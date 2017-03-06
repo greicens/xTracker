@@ -3,7 +3,6 @@ class Entry < ApplicationRecord
   belongs_to :user
   belongs_to :category, optional: true
   validates :amount, presence: true
-  validates :entry_type, presence: true
   validates :category_id, presence: true
   scope :category, -> (category_id){ where category_id: category_id }
   scope :vendor, -> (vendor) { where vendor: vendor}

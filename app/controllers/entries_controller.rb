@@ -3,7 +3,6 @@ class EntriesController < ApplicationController
 
   def index
     @user = User.find_by_id(params[:user_id])
-    # @entries = @user.entries
     category = Category.find_by_name(params[:category])
     @entries = @user.entries.where(nil) #creates an anonymous scope
     @entries = @entries.category(category.id) if params[:category].present?
@@ -14,19 +13,19 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new
-    @user = current_user || User.new
+    @user = current_user
   end
   def create
-    user = current_user
-    entry = Entry.create(entry_params)
-    if entry.save
-      user.entries << entry
-      redirect_to user_entries_path(user)
+    @user = current_user
+    @entry = Entry.create(entry_params)
+    if @entry.save
+      @user.entries << @entry
+      redirect_to user_entries_path(@user)
     else
-      entry.errors.full_messages.each do |message|
+      @entry.errors.full_messages.each do |message|
         flash[:error] = message
       end
-      redirect_to new_entry_path
+      redirect_to new_user_entry_path(@user)
     end
   end
 
@@ -56,15 +55,15 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    user = User.find_by_id(params[:user_id])
+    @user = User.find_by_id(params[:user_id])
     entry = Entry.find_by_id(params[:id])
     entry.destroy
-    redirect_to user_entries_path(user)
+    redirect_to user_entries_path(@user)
   end
 
   private
 
   def entry_params
-    params.require(:entry).permit(:receipt,:amount, :entry_type, :day, :payment_type, :notes, :vendor, :recurring, :category_id )
+    params.require(:entry).permit(:receipt,:amount, :day, :payment_type, :notes, :vendor, :recurring, :category_id )
   end
 end
