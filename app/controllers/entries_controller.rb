@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :require_login
 
   def index
-    @user = current_user
+    @user = User.find_by_id(params[:user_id])
     category = Category.find_by_name(params[:category])
     @entries = @user.entries.where(nil) #creates an anonymous scope
     @entries = @entries.category(category.id) if params[:category].present?
@@ -12,8 +12,8 @@ class EntriesController < ApplicationController
   end
 
   def new
-    @user = current_user
     @entry = Entry.new
+    @user = current_user
   end
   def create
     @user = current_user
@@ -58,7 +58,7 @@ class EntriesController < ApplicationController
     @user = User.find_by_id(params[:user_id])
     entry = Entry.find_by_id(params[:id])
     entry.destroy
-    redirect_to entries_path(@user)
+    redirect_to user_entries_path(@user)
   end
 
   private

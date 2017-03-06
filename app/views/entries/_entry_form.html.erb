@@ -1,14 +1,14 @@
 <!-- FORM FOR ENTRY PARTIAL -->
 
   <%= form_for [@user, @entry]  do |f| %>
-    </div>
     <div class="row">
       <div class="col s6">
         <%=f.label :date %>
         <%= f.date_field :day, class:"datepicker" %>
       </div>
       <div class="col s6">
-        <%= f.text_field :category_id %>
+        <%= f.label :category %>
+        <%= f.collection_select :category_id, Category.all,:id, :name %>
       </div>
     </div>
     <div class="row">
